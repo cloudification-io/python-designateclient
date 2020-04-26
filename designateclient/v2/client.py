@@ -30,6 +30,7 @@ from designateclient.v2.zones import ZoneController
 from designateclient.v2.zones import ZoneExportsController
 from designateclient.v2.zones import ZoneImportsController
 from designateclient.v2.zones import ZoneTransfersController
+from designateclient.v2.zones import SharedZoneController
 from designateclient import version
 
 
@@ -137,6 +138,7 @@ class Client(object):
         self.zone_transfers = ZoneTransfersController(self)
         self.zone_exports = ZoneExportsController(self)
         self.zone_imports = ZoneImportsController(self)
+        self.shared_zones = SharedZoneController(self)
         self.pools = PoolController(self)
         self.quotas = QuotasController(self)
         self.tsigkeys = TSIGKeysController(self)
